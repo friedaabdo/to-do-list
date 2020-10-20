@@ -15,7 +15,8 @@ const logger = require('morgan')
 app.use(logger('dev'));
 
 //other middleware
-NODE_ENV === "production" ? app.use(cors(corsOptions)) : app.use(cors());
+// NODE_ENV === "production" ? app.use(cors(corsOptions)) : app.use(cors());
+app.use(cors())
 app.use(express.urlencoded({extended:false}))
 app.use(express.json())
 
