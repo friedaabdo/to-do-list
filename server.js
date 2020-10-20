@@ -26,11 +26,11 @@ app.get('/', (req, res) => {
     })
 })
 
-const listsController = require('./controllers/lists.js')
-app.use('/allLists', listsController)
+// const listsController = require('./controllers/lists.js')
+// app.use('/allLists', listsController)
 
-const categoriesController = require('./controllers/categories.js')
-app.use('/categories',categoriesController)
+// const categoriesController = require('./controllers/categories.js')
+// app.use('/categories',categoriesController)
 
 app.listen(PORT, () => {
     console.log(`listening in on port: ${PORT}`)
