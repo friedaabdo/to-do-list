@@ -32,8 +32,8 @@ router.get("/", async (req, res) => {
     });
   });
 
-  router.delete("/:id", async (req, res) => {
-    const category = await Category.findByIdAndDelete({category:req.params.category})
+  router.delete("/:category", async (req, res) => {
+    const category = await Category.findOneAndDelete({category:req.params.category})
     res.json({
         status: 200,
         msg: "data deleted",

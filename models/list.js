@@ -4,7 +4,8 @@ const Schema = mongoose.Schema
 const listSchema = new Schema(
     {
         "todo": String,
-        "completeBy": {type: Date}
+        "completeBy": {type: Date},
+        "byTime": String
     }
 )
 
