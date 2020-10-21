@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
     });
   });
 
-  router.post("/", async (req, res) => {
+  router.post("/create", async (req, res) => {
     const category = await Category.create(req.body)
     res.json(
        { status: 200,
@@ -41,6 +41,16 @@ router.get("/", async (req, res) => {
         data: category
     });
   });
+
+  router.get('/:category/andList', async (req,res) => {
+    // console.log('owner -- put',req.params)
+
+    const list = await List.find({})
+    const category = await Category.findOne(
+        {category:req.params.category, list: list}
+    )
+    res.json({status:200, data: category})
+})
 
   router.put('/:category/addList/:listId', async (req,res) => {
     // console.log('owner -- put',req.params)
